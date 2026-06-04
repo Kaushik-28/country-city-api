@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "988e0910-6021-4310-af30-bd713451afe6",
+    "name": "Kaushik-Country City API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53550686",
+    "_collection_link": "https://go.postman.co/collection/53550686-988e0910-6021-4310-af30-bd713451afe6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all countries",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/countries",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "countries"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all cities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/countries/1/cities?page=3&size=4",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "countries",
+            "1",
+            "cities"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "size",
+              "value": "4",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET city details by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/cities/9",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "cities",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
