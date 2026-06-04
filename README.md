@@ -42,8 +42,17 @@ http://localhost:8080/v3/api-docs
 - The cities list API uses Spring Data `Pageable` and `PageImpl` for pagination. This should make it easier to replace the in-memory repository with a database repository later.
 - Basic validations are added for path variables and pagination parameters.
 - A common exception handler is added so that invalid inputs and not-found cases return cleaner error responses.
+- Response DTOs are implemented as Java records because they are simple immutable data carriers and keep the API response model concise.
 - Also added a Dockerfile, an Actuator health check endpoint, and a Postman collection to make the application easier to run, verify, and test during review.
 
+## API Summary
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/countries` | Returns all countries |
+| GET | `/countries/{countryId}/cities?page=0&size=4` | Returns paginated cities for a country |
+| GET | `/cities/{cityId}` | Returns city details by id |
+| GET | `/actuator/health` | Returns application health status |
 ## To Clone and Run
 
 ```bash
@@ -59,7 +68,11 @@ From the project root:
 Build the application jar:
 
 ```bash
-mvn clean package
+./mvnw clean package
+```
+or windows
+```windows
+mvnw.cmd clean package
 ```
 
 Build the Docker image:
@@ -78,7 +91,11 @@ docker run --rm -p 8080:8080 country-city-api
 From the project root, run:
 
 ```bash
-mvn clean spring-boot:run
+./mvnw clean spring-boot:run
+```
+or windows
+```windows
+mvnw.cmd clean spring-boot:run
 ```
 
 ## URLs
